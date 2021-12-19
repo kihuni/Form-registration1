@@ -1,12 +1,9 @@
 import React from 'react'
-import { useForm } from './useForm'
+import useForm from './useForm'
 
 const Form = () => {
+const{handleChange, values, handleSubmit} = useForm()
 
-  const[handleChange, value] = useForm()
-    const handleSubmit = (e) =>{
-      e.preventDefault()
-    }
     return (
         <div className='container'>
            <form action="" onSubmit={handleSubmit}>
@@ -16,7 +13,7 @@ const Form = () => {
                 <input type="text"
                  id='name' 
                 name='name'
-                value={value.name}
+                value={values.name}
                 onChange={handleChange}
                 />
               </div>
@@ -25,7 +22,7 @@ const Form = () => {
                  <input type="email" 
                  id='email' 
                  name='email'
-                 value={value.email}
+                 value={values.email}
                  onChange={handleChange}
                  />
               </div>
@@ -34,7 +31,7 @@ const Form = () => {
                  <input type="text"
                  id='Country' 
                  name='country'
-                 value={value.country}
+                 value={values.country}
                  onChange={handleChange}
                  />
               </div>
@@ -43,7 +40,7 @@ const Form = () => {
                  <input type="tel" 
                  id='phone' 
                  name='phone'
-                 value={value.phone}
+                 value={values.phone}
                  onChange={handleChange}
                  />
               </div>
@@ -52,7 +49,7 @@ const Form = () => {
                  <input type="pwd" 
                  id='password' 
                  name='password'
-                 value={value.password}
+                 value={values.password}
                  onChange={handleChange}
                  />
               </div>
@@ -60,7 +57,7 @@ const Form = () => {
                  <input className='check' 
                  type="checkbox" 
                  name='checkbox'
-                 value={value.checkbox}
+                 value={values.checkbox}
                  onChange={handleChange}
                  />
                  <span>I accept terms & Condition</span>

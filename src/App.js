@@ -1,7 +1,9 @@
-import Form from "./Form";
+import FormSub from "./FormSub";
 import {useState} from 'react'
 import './App.css'
 import FormSuccess from "./FormSuccess";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
 const [isSubmitted, setIsSubmitting] = useState(false);
@@ -11,7 +13,7 @@ const submitedForm = () =>{
 }
   return (
     <div className="app">
-    {!isSubmitted ? <Form submitform ={submitedForm} /> : (<FormSuccess />)}
+    {!isSubmitted ? <FormSub submitform ={submitedForm} /> : (<FormSuccess />)}
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import React from 'react'
-import useForm from './useForm'
 
-const Form = () => {
-const{handleChange, values, handleSubmit} = useForm()
+import useForm from './useForm'
+import validate from './ValidateInfor'
+
+const Form = ({submitform}) => {
+const{handleChange, values, handleSubmit, errors} = useForm(submitform,validate)
 
     return (
         <div className='container'>
@@ -16,6 +18,7 @@ const{handleChange, values, handleSubmit} = useForm()
                 value={values.name}
                 onChange={handleChange}
                 />
+                {errors.name && <p>{errors.name}</p>}
               </div>
               <div className='form-input'>
                  <label htmlFor="email" >Email Address</label>
@@ -25,6 +28,7 @@ const{handleChange, values, handleSubmit} = useForm()
                  value={values.email}
                  onChange={handleChange}
                  />
+                   {errors.email && <p>{errors.email}</p>}
               </div>
               <div className='form-input'>
                  <label htmlFor="Country" >Country</label>
@@ -34,6 +38,7 @@ const{handleChange, values, handleSubmit} = useForm()
                  value={values.country}
                  onChange={handleChange}
                  />
+                   {errors.country && <p>{errors.country}</p>}
               </div>
               <div className='form-input'>
                  <label htmlFor="phone" >Phone</label>
@@ -43,6 +48,7 @@ const{handleChange, values, handleSubmit} = useForm()
                  value={values.phone}
                  onChange={handleChange}
                  />
+                   {errors.phone && <p>{errors.phone}</p>}
               </div>
               <div className='form-input'>
                  <label htmlFor="password" >Password</label>
@@ -52,6 +58,7 @@ const{handleChange, values, handleSubmit} = useForm()
                  value={values.password}
                  onChange={handleChange}
                  />
+                   {errors.password && <p>{errors.password}</p>}
               </div>
               <div className='form-check'>
                  <input className='check' 

@@ -9,7 +9,7 @@ const{handleChange, values, handleSubmit, errors} = useForm(submitform,validate)
 
     return (
 
-        <Container>
+        <Container >
           <Row>
             <Col md= {{span:4, offset:3}}>
           <h2>Registration form</h2>
